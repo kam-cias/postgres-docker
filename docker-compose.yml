@@ -1,0 +1,15 @@
+version: "3"
+services:
+
+  postgres:
+    image: ${IMAGE}:${VER}
+    container_name: ${IMAGE}-${VER}
+    env_file:
+      - .env
+    volumes:
+      - data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+ data:
